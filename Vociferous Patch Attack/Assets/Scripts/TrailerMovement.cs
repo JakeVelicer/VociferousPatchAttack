@@ -8,7 +8,6 @@ public class TrailerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rigidBody;
     public float maxDistance = 3;
-    private Vector2 movement;
     private float distance;
     private bool canMove;
 
