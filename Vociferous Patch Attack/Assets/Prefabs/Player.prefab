@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3482260147577049999}
   - component: {fileID: 3482260147577049998}
   - component: {fileID: 3482260147577049996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trailer
   m_TagString: PlayerTrailer
   m_Icon: {fileID: 0}
@@ -94,10 +94,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   truck: {fileID: 3482260148786332844}
-  moveSpeed: 1
+  moveSpeed: 2
   rigidBody: {fileID: 3482260147577049998}
   maxDistance: 3
-  speed: 0.01
 --- !u!1 &3482260147938735791
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3482260147938735788}
   - component: {fileID: 3482260147938735789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3482260148359770364}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3482260148634190352}
   - component: {fileID: 3482260148634190353}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +301,7 @@ GameObject:
   - component: {fileID: 3482260148786332833}
   - component: {fileID: 3482260148786332832}
   - component: {fileID: 3482260148786332835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Truck
   m_TagString: PlayerTruck
   m_Icon: {fileID: 0}

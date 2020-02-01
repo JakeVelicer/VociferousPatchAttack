@@ -11,31 +11,17 @@ public class TrailerMovement : MonoBehaviour
     private Vector2 movement;
     private float distance;
 
-    public float speed = 1.0F;
-    private float startTime;
-    private float journeyLength;
-    private float fractionOfJourney;
-
     // Start is called before the first frame update
     void Start()
     {
-        // Keep a note of the time the movement started.
-        startTime = Time.time;
 
-        // Calculate the journey length.
-        journeyLength = Vector3.Distance(transform.position, truck.transform.position);
     }
 
     void Update()
     {
         distance = Vector3.Distance (transform.position, truck.transform.position);
 
-        // Distance moved equals elapsed time times speed..
-        float distCovered = (Time.time - startTime) * speed;
-
-        // Fraction of journey completed equals current distance divided by total distance.
-        fractionOfJourney = distCovered / journeyLength;
-
+        // Rotation Management
         Vector3 vectorToTarget = truck.transform.position - transform.position;
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -47,7 +33,7 @@ public class TrailerMovement : MonoBehaviour
     {
         if (distance > maxDistance)
         {
-            rigidBody.MovePosition(Vector3.Lerp(transform.position, truck.transform.position, fractionOfJourney));
+            rigidBody.velocity = (truck.transform.position - transform.position) * moveSpeed;
         }
     }
 }
