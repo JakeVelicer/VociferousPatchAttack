@@ -16,17 +16,16 @@ public class MeleeEnemy : Enemy
     {
         //Move towards the player
 
-        if (player != null)
-        {
+
             if (DistanceToPlayer() > distanceToAttack)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.position,  speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, ClosestPlayer().position,  speed * Time.deltaTime);
             }
             else
             {
                 Clawing();
             }
-        }
+        
     }
 
     private void Clawing()
@@ -45,6 +44,8 @@ public class MeleeEnemy : Enemy
 
     public float DistanceToPlayer()
     {
-        return Vector2.Distance(transform.position, player.position);
+        return Vector2.Distance(transform.position, ClosestPlayer().position);
     }
+
+    
 }
