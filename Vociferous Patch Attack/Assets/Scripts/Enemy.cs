@@ -11,14 +11,30 @@ public class Enemy : MonoBehaviour
     public float speed;
 
 
-    protected Transform player;
+    protected Transform truck;
+    protected Transform trailer;
+
     private Camera mainCam;
 
 
     private void Start() 
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        truck   = GameObject.FindGameObjectWithTag("PlayerTruck").transform;
+        trailer = GameObject.FindGameObjectWithTag("PlayerTrailer").transform;
+
         //mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
+    }
+
+    public Transform ClosestPlayer()
+    {
+        if (Vector2.Distance(transform.position, truck.position) < Vector2.Distance(transform.position, trailer.position))
+        {
+            return truck;
+        }
+        else
+        {
+            return trailer;
+        }
     }
 
 

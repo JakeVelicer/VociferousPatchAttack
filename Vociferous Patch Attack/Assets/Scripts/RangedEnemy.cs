@@ -35,7 +35,7 @@ public class RangedEnemy : Enemy
 
     private void LookAtPlayer()
     {
-        Vector2 lookDirection = player.position - transform.position;
+        Vector2 lookDirection = ClosestPlayer().position - transform.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
 
         transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, angle);

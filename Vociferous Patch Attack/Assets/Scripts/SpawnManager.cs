@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("PlayerTruck").transform;
         StartCoroutine(SpawnEnemies());
     }
 
@@ -33,10 +33,10 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
              yield return new WaitForSeconds(spawnRate);
-
+            player = GameObject.FindGameObjectWithTag("PlayerTruck").transform;
              if (Random.Range(0.0f, 1.0f) <= spawnChance)
             {
-            Instantiate(MeleeEnemy, new Vector3(randomSpawnPosX(), randomSpawnPosY(), 0f), Quaternion.identity);
+                Instantiate(MeleeEnemy, new Vector3(player.position.x + randomSpawnPosX(), player.position.y + randomSpawnPosY(), 0f), Quaternion.identity);
             }
         }
 
