@@ -10,6 +10,7 @@ public class TrailerMovement : MonoBehaviour
     public float maxDistance = 3;
     private Vector2 movement;
     private float distance;
+    private bool canMove;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +27,21 @@ public class TrailerMovement : MonoBehaviour
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 5);
+
+        if (distance > maxDistance)
+        {
+            canMove = true;
+        }
+        else
+        {
+            canMove = false;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (distance > maxDistance)
+        if (canMove)
         {
             rigidBody.velocity = (truck.transform.position - transform.position) * moveSpeed;
         }
