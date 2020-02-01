@@ -22,7 +22,9 @@ public class TruckMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         if(movement.x != 0 || movement.y != 0)
-        truckSpriteObject.transform.eulerAngles = new Vector3( 0, 0, Mathf.Atan2(-movement.x, movement.y) * 180 / Mathf.PI);
+        {
+            truckSpriteObject.transform.eulerAngles = new Vector3( 0, 0, Mathf.Atan2(-movement.x, movement.y) * 180 / Mathf.PI);
+        }
     }
 
     void FixedUpdate()
