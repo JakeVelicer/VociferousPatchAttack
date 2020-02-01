@@ -187,6 +187,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3482260147577049996, guid: 6fc2f70ae5b66f5419015d2db9b53fcc,
+        type: 3}
+      propertyPath: maxDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3482260147577049996, guid: 6fc2f70ae5b66f5419015d2db9b53fcc,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3482260148786332835, guid: 6fc2f70ae5b66f5419015d2db9b53fcc,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fc2f70ae5b66f5419015d2db9b53fcc, type: 3}
 --- !u!1 &398819892
@@ -243,7 +258,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.39
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -362,7 +377,7 @@ MonoBehaviour:
   m_Follow: {fileID: 413728285}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 8.39
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -446,7 +461,7 @@ MonoBehaviour:
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0.012232416
+  m_DeadZoneHeight: 0.02439047
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8

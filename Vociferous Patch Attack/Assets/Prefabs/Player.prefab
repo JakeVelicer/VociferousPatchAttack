@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3482260147577049992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.49, z: 0}
+  m_LocalPosition: {x: 0, y: -3.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3482260147938735788}
@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.57}
+  m_Size: {x: 2.37, y: 1.42}
   m_EdgeRadius: 0
 --- !u!50 &3482260147577049998
 Rigidbody2D:
@@ -94,9 +94,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   truck: {fileID: 3482260148786332844}
-  moveSpeed: 3.9
+  moveSpeed: 3
   rigidBody: {fileID: 3482260147577049998}
-  maxDistance: 1.5
+  maxDistance: 3
 --- !u!1 &3482260147938735791
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 3482260147938735791}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3482260147577049993}
   m_RootOrder: 0
@@ -235,7 +235,7 @@ Transform:
   m_GameObject: {fileID: 3482260148634190355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3482260148786332834}
   m_RootOrder: 0
@@ -347,7 +347,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62, y: 1}
+  m_Size: {x: 1.49, y: 2.42}
   m_EdgeRadius: 0
 --- !u!50 &3482260148786332832
 Rigidbody2D:
@@ -382,6 +382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3902e7da43baee04ca43a58500a803cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 7
   rigidBody: {fileID: 3482260148786332832}
   truckSpriteObject: {fileID: 3482260148634190352}
