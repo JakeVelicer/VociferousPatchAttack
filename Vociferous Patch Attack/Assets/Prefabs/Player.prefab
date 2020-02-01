@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3482260147577049999}
   - component: {fileID: 3482260147577049998}
   - component: {fileID: 3482260147577049996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trailer
   m_TagString: PlayerTrailer
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3482260147577049992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.48, z: 0}
+  m_LocalPosition: {x: 0, y: -1.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3482260147938735788}
@@ -47,7 +47,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.010987759}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.99, y: 1.13}
+  m_Size: {x: 1, y: 0.57}
   m_EdgeRadius: 0
 --- !u!50 &3482260147577049998
 Rigidbody2D:
@@ -96,8 +96,7 @@ MonoBehaviour:
   truck: {fileID: 3482260148786332844}
   moveSpeed: 1
   rigidBody: {fileID: 3482260147577049998}
-  maxDistance: 3
-  speed: 0.01
+  maxDistance: 1
 --- !u!1 &3482260147938735791
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3482260147938735788}
   - component: {fileID: 3482260147938735789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 3482260147938735791}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 3482260147577049993}
   m_RootOrder: 0
@@ -167,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 642b074cdbeb8e54594dfa3563d9b304, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15469e88fb7434ef18f73a3fd7f20b37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -187,7 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3482260148359770364}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3482260148634190352}
   - component: {fileID: 3482260148634190353}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +235,7 @@ Transform:
   m_GameObject: {fileID: 3482260148634190355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 3482260148786332834}
   m_RootOrder: 0
@@ -279,7 +278,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 642b074cdbeb8e54594dfa3563d9b304, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b18171dc8cef547bfbdd08cfbd97cfc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,7 +301,7 @@ GameObject:
   - component: {fileID: 3482260148786332833}
   - component: {fileID: 3482260148786332832}
   - component: {fileID: 3482260148786332835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Truck
   m_TagString: PlayerTruck
   m_Icon: {fileID: 0}
@@ -348,7 +347,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.2}
+  m_Size: {x: 0.62, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &3482260148786332832
 Rigidbody2D:
@@ -383,6 +382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3902e7da43baee04ca43a58500a803cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 4
   rigidBody: {fileID: 3482260148786332832}
   truckSpriteObject: {fileID: 3482260148634190352}
