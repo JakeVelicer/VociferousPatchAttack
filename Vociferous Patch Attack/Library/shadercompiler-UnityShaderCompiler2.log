@@ -1,3 +1,4 @@
-Base path: '/Users/wguiles/Documents/Fall 2018/Jump Internship/2019.2.3f1/Unity.app/Contents', plugins path '/Users/wguiles/Documents/Fall 2018/Jump Internship/2019.2.3f1/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.2.3f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.2.3f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=14 insize=1957 outsize=1151 ok=1
