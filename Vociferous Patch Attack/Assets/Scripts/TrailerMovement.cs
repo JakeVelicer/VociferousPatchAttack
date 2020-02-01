@@ -34,6 +34,7 @@ public class TrailerMovement : MonoBehaviour
         else
         {
             canMove = false;
+            rigidBody.velocity = Vector3.zero;
         }
     }
 
