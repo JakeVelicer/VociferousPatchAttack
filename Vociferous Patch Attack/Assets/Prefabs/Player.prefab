@@ -94,9 +94,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   truck: {fileID: 3482260148786332844}
-  moveSpeed: 1
+  moveSpeed: 3.9
   rigidBody: {fileID: 3482260147577049998}
-  maxDistance: 1
+  maxDistance: 1.5
 --- !u!1 &3482260147938735791
 GameObject:
   m_ObjectHideFlags: 0
