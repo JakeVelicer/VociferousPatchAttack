@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - PlayerTruck
+  - PlayerTrailer
   layers:
   - Default
   - TransparentFX
