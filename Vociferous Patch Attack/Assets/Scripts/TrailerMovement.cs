@@ -8,14 +8,16 @@ public class TrailerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rigidBody;
     public float maxDistance = 3;
-    private float health;
+    public float health;
+
+    private float maxHealth;
     private float distance;
     private bool canMove;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        maxHealth = health;
     }
 
     void Update()
@@ -55,6 +57,7 @@ public class TrailerMovement : MonoBehaviour
     public void SetHealth(float givenHealth)
     {
         health = givenHealth;
+        UIManager.instance.setPlayer2HealthBar((float)givenHealth, (float)maxHealth);
     }
 
     public float GetHealth()

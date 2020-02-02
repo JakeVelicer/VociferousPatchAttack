@@ -8,12 +8,13 @@ public class TruckMovement : MonoBehaviour
     public Rigidbody2D rigidBody;
     public Transform truckSpriteObject;
     private Vector2 movement;
-    private float health;
+    public float health;
+    private float maxHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        maxHealth = health;
     }
 
     // Update is called once per frame
@@ -25,6 +26,11 @@ public class TruckMovement : MonoBehaviour
         if(movement.x != 0 || movement.y != 0)
         {
             truckSpriteObject.transform.eulerAngles = new Vector3( 0, 0, Mathf.Atan2(-movement.x, movement.y) * 180 / Mathf.PI);
+        }
+
+        if (Input.GetButtonDown("Dash"))
+        {
+            Debug.Log("Dash");
         }
     }
 
@@ -43,6 +49,7 @@ public class TruckMovement : MonoBehaviour
     public void SetHealth(float givenHealth)
     {
         health = givenHealth;
+        UIManager.instance.setPlayer1HealthBar((float)health, (float)maxHealth);
     }
 
     public float GetHealth()
