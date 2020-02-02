@@ -32,6 +32,19 @@ public class TrailerTurret : MonoBehaviour
             {
                 transform.Rotate(Vector3.forward * (-rotateSpeed * Time.fixedDeltaTime));
             }
+
+            if (Input.GetButtonDown("FireTurret") && !shooting)
+            {
+                shooting = true;
+            }
+            else if (Input.GetButtonUp("FireTurret"))
+            {
+                shooting = false;
+            }
+        }
+        else
+        {
+            shooting = false;
         }
 
         if (shooting)
@@ -43,15 +56,6 @@ public class TrailerTurret : MonoBehaviour
                 Shoot();
                 currentTimer = 0f;
             }
-        }
-
-        if (Input.GetButtonDown("FireTurret") && !shooting)
-        {
-            shooting = true;
-        }
-        else if (Input.GetButtonUp("FireTurret"))
-        {
-            shooting = false;
         }
     }
 
