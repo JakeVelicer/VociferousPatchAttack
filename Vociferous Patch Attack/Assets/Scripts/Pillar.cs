@@ -38,6 +38,10 @@ public class Pillar : MonoBehaviour
 
                 if (amountCharged >= maxCharge)
                 {
+                    if(activated == false)
+                    {
+                        AudioManager.Instance.PlaySound("relayPower");
+                    }
                     activated = true;
                 }
             }

@@ -175,7 +175,7 @@ MonoBehaviour:
   maxCharge: 100
   amountCharged: 0
   chargeBar: {fileID: 6160430793088620881}
-  chargeRate: 50
+  chargeRate: 30
 --- !u!58 &3716403577576466729
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.06, y: 5.71}
+  m_AnchoredPosition: {x: 1.06, y: 0.35}
   m_SizeDelta: {x: 10, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1874341030730172579
@@ -352,7 +352,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &530430032286338116
 MonoBehaviour:

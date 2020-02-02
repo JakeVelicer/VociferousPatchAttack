@@ -47,6 +47,7 @@ public class TruckMovement : MonoBehaviour
 
         if (health <= 0 && GameObject.FindObjectOfType<TrailerMovement>().health <= 0)
         {
+            AudioManager.Instance.PlaySound("playerDeath");
             UIManager.instance.DisplayLosePanel();
         }
     }

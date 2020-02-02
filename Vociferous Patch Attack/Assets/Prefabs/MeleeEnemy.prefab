@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damage: 2
-  speed: 7
+  speed: 4
   distanceToAttack: 1.5
   attackRechargeRate: 0.2
 --- !u!58 &7133816471616618408

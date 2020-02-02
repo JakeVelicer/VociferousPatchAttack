@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class UIManager : MonoBehaviour
@@ -21,6 +22,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject P2repairPanelLeft;
     public GameObject P2repairPanelRight;
+
+    public GameObject basePanel;
 
     public GameObject RepairText;
 
@@ -161,12 +164,16 @@ public class UIManager : MonoBehaviour
 
     public void DisplayWinPanel()
     {
+        basePanel.SetActive(false);
         winPanel.SetActive(true);
+        StartCoroutine(ReturnToMainMenu());
     }
 
     public void DisplayLosePanel()
     {
+        basePanel.SetActive(false);
         losePanel.SetActive(true);
+        StartCoroutine(ReturnToMainMenu());
     }
 
     public void updateRelayDisplayText(int currentRelays, int maxRelays)
@@ -211,7 +218,11 @@ public class UIManager : MonoBehaviour
         p2Health.fillAmount = (currentHealth / MaxHealth);
     }
 
-
+    public IEnumerator ReturnToMainMenu()
+    {
+        yield return new WaitForSeconds(8);
+        SceneManager.LoadScene("Menu");
+    }
 
 
 }
