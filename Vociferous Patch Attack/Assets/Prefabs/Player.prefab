@@ -406,7 +406,7 @@ MonoBehaviour:
   rotateSpeed: 240
   bulletSpeed: 50
   bulletDamage: 10
-  fireRate: 0.3
+  fireRate: 0.15
 --- !u!1 &3482260147577049992
 GameObject:
   m_ObjectHideFlags: 0
