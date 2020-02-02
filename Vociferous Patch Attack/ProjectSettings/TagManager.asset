@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - PlayerTruck
   - PlayerTrailer
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
