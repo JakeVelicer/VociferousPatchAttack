@@ -156,10 +156,10 @@ public class UIManager : MonoBehaviour
 
     public void ActivateRepairMode()
     {
-        statusText.text = "Lockdown";
+        statusText.text = "Repairing";
 
-        P1Select(1);
-        P2Select(2);
+        //P1Select(1);
+        //P2Select(2);
     }
 
     public bool isLockedDown()

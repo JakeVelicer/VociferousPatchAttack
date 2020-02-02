@@ -10,6 +10,8 @@ public class SpawnManager : MonoBehaviour
     public float spawnRate;
     public GameObject MeleeEnemy;
 
+    private int waveAmount = 0; //how many enemies spawn within the current wave
+
 
     [Range(0.0f, 1.0f)]
     public float spawnChance;
@@ -18,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("PlayerTruck").transform;
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(WaitFuckYou());
     }
 
     // Update is called once per frame
@@ -27,10 +29,18 @@ public class SpawnManager : MonoBehaviour
         
     }
 
+    IEnumerator WaitFuckYou()
+    {
+        yield return new WaitForSeconds(10f);
+        StartCoroutine(SpawnEnemies());
+    }
+
     IEnumerator SpawnEnemies()
     {
 
-        while (true)
+        waveAmount = Random.Range(14, 34);
+
+        while (waveAmount > 0)
         {
              yield return new WaitForSeconds(spawnRate);
             player = GameObject.FindGameObjectWithTag("PlayerTruck").transform;
@@ -38,7 +48,14 @@ public class SpawnManager : MonoBehaviour
             {
                 Instantiate(MeleeEnemy, new Vector3(player.position.x + randomSpawnPosX(), player.position.y + randomSpawnPosY(), 0f), Quaternion.identity);
             }
+            waveAmount --;
         }
+
+        spawnRate -= 0.01f;
+
+        yield return new WaitForSeconds(Random.Range(7, 15));
+
+        StartCoroutine(SpawnEnemies());
 
     }
 
