@@ -44,6 +44,11 @@ public class TruckMovement : MonoBehaviour
         {
             HealOverTime();
         }
+
+        if (health <= 0 && GameObject.FindObjectOfType<TrailerMovement>().health <= 0)
+        {
+            UIManager.instance.DisplayLosePanel();
+        }
     }
 
     void FixedUpdate()
