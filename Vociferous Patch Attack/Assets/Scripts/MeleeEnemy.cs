@@ -47,5 +47,9 @@ public class MeleeEnemy : Enemy
         return Vector2.Distance(transform.position, ClosestPlayer().position);
     }
 
-    
+    public override void Die()
+    {
+        Destroy(gameObject);
+        AudioManager.Instance.PlaySound("Squish");
+    }
 }

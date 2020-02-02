@@ -406,7 +406,7 @@ MonoBehaviour:
   rotateSpeed: 240
   bulletSpeed: 50
   bulletDamage: 10
-  fireRate: 0.15
+  fireRate: 0.075
 --- !u!1 &3482260147577049992
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +506,8 @@ MonoBehaviour:
   rigidBody: {fileID: 3482260147577049998}
   maxDistance: 3
   health: 100
+  healRate: 0
+  healAmount: 0
 --- !u!1 &3482260148359770367
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +719,8 @@ MonoBehaviour:
   rigidBody: {fileID: 3482260148786332832}
   truckSpriteObject: {fileID: 3482260148634190352}
   health: 100
+  healRate: 0
+  healAmount: 0
 --- !u!1 &5549540483093034683
 GameObject:
   m_ObjectHideFlags: 0

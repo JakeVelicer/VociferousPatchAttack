@@ -73,9 +73,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
-        Destroy(gameObject);
+        
     }
 
     public virtual void Move()
