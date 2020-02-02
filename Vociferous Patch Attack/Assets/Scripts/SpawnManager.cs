@@ -20,13 +20,19 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("PlayerTruck").transform;
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(WaitFuckYou());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator WaitFuckYou()
+    {
+        yield return new WaitForSeconds(10f);
+        StartCoroutine(SpawnEnemies());
     }
 
     IEnumerator SpawnEnemies()
@@ -44,6 +50,8 @@ public class SpawnManager : MonoBehaviour
             }
             waveAmount --;
         }
+
+        spawnRate -= 0.01f;
 
         yield return new WaitForSeconds(Random.Range(7, 15));
 
