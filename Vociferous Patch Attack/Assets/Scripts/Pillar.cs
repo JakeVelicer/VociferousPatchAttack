@@ -8,8 +8,8 @@ public class Pillar : MonoBehaviour
     public bool activated;
     public float maxCharge;
     public float amountCharged;
-    private bool charging;
     public Image chargeBar;
+    public float chargeRate = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +20,6 @@ public class Pillar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(charging)
-        {
-            amountCharged += 2 * Time.fixedDeltaTime;
-
-            if (amountCharged >= maxCharge)
-            {
-                activated = true;
-            }
-        }
         chargeBar.fillAmount = (amountCharged / maxCharge);
     }
 
@@ -39,20 +30,17 @@ public class Pillar : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("PlayerTruck") || other.gameObject.CompareTag("PlayerTruck"))
+        if(other.gameObject.CompareTag("PlayerTruck") || other.gameObject.CompareTag("PlayerTrailer"))
         {
-            if(MicInput.micInstance.GetRepairMode() == true)
+            if(GameObject.FindObjectOfType<MicInput>().GetRepairMode())
             {
-                charging = true;
+                amountCharged += chargeRate * Time.fixedDeltaTime;
+
+                if (amountCharged >= maxCharge)
+                {
+                    activated = true;
+                }
             }
-            else
-            {
-                charging = false;
-            }
-        }
-        else
-        {
-            charging = false;
         }
     }
 }

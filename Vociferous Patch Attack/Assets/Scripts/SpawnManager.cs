@@ -53,7 +53,7 @@ public class SpawnManager : MonoBehaviour
 
         spawnRate -= 0.01f;
 
-        yield return new WaitForSeconds(Random.Range(7, 15));
+        yield return new WaitForSeconds(Random.Range(3, 15));
 
         StartCoroutine(SpawnEnemies());
 
