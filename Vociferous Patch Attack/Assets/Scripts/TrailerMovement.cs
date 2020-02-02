@@ -14,6 +14,11 @@ public class TrailerMovement : MonoBehaviour
     private float distance;
     private bool canMove;
 
+    public float healRate;
+    public float healAmount;
+
+    private float currentTimer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +56,22 @@ public class TrailerMovement : MonoBehaviour
         else if(MicInput.micInstance.GetRepairMode())
         {
             rigidBody.velocity = Vector3.zero;
+        }
+
+        if (MicInput.micInstance.GetRepairMode())
+        {
+            HealOverTime();
+        }
+    }
+
+    public void HealOverTime()
+    {
+        currentTimer += Time.deltaTime;
+
+        if (currentTimer >= healRate)
+        {
+            currentTimer = 0f;
+            SetHealth(GetHealth() + healAmount);
         }
     }
 

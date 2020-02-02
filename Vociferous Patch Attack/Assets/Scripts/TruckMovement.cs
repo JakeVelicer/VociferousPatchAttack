@@ -11,6 +11,13 @@ public class TruckMovement : MonoBehaviour
     public float health;
     private float maxHealth;
 
+    public float healRate;
+    public float healAmount;
+
+    private float currentTimer = 0f;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +39,11 @@ public class TruckMovement : MonoBehaviour
         {
             Debug.Log("Dash");
         }
+
+        if (MicInput.micInstance.GetRepairMode())
+        {
+            HealOverTime();
+        }
     }
 
     void FixedUpdate()
@@ -43,6 +55,17 @@ public class TruckMovement : MonoBehaviour
         else if(MicInput.micInstance.GetRepairMode())
         {
             rigidBody.velocity = Vector3.zero;
+        }
+    }
+
+    public void HealOverTime()
+    {
+        currentTimer += Time.deltaTime;
+
+        if (currentTimer >= healRate)
+        {
+            currentTimer = 0f;
+            SetHealth(GetHealth() + healAmount);
         }
     }
 
