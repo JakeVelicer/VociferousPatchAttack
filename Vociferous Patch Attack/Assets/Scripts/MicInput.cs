@@ -10,18 +10,26 @@ public class MicInput : MonoBehaviour
 
     [Range(0.0f, 1.0f)]
     public float soundThreshold;
-
     public float testSound;
     public static float MicLoudness;
     private string _device;
     private AudioClip _clipRecord = null;
     private int _sampleWindow = 128;
     private bool _isInitialized;
+    private bool _repairModeActivated;
+    public static MicInput micInstance;
 
     //public TextMeshProUGUI displayText;
 
     public Image bar;
 
+    void Awake()
+    {
+        if (micInstance = null)
+        {
+            micInstance = this;
+        }
+    }
     
     void Start()
     {
@@ -106,10 +114,12 @@ public class MicInput : MonoBehaviour
         if (bar.fillAmount >= soundThreshold)
         {
             UIManager.instance.ActivateRepairMode();
+            SetRepairMode(true);
         }
         else
         {
             UIManager.instance.DeactivateRepairMode();
+            SetRepairMode(false);
         }
 
         //bar.fillAmount = Mathf.Lerp(0f, 1f, MicLoudness / 1);
@@ -147,6 +157,16 @@ public class MicInput : MonoBehaviour
             StopMicrophone ();
             _isInitialized = false;
         }
+    }
+
+    public void SetRepairMode(bool givenMode)
+    {
+        _repairModeActivated = givenMode;
+    }
+
+    public bool GetRepairMode()
+    {
+        return _repairModeActivated;
     }
 
 }
