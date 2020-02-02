@@ -12,6 +12,7 @@ public class MicInput : MonoBehaviour
     public float highSoundThreshold;
 
     [Range(0.0f, 1.0f)]
+
     public float lowSoundThreshold;
     public float testSound;
     public static float MicLoudness;
