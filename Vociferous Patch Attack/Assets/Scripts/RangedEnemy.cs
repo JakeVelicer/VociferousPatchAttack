@@ -60,4 +60,9 @@ public class RangedEnemy : Enemy
     {
         canShoot = false;
     }
+    public override void Die()
+    {
+        Destroy(gameObject);
+        AudioManager.Instance.PlaySound("turretDeath");
+    }
 }

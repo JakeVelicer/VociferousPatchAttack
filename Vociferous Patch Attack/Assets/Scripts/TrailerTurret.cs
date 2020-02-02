@@ -66,5 +66,6 @@ public class TrailerTurret : MonoBehaviour
         BulletScript bulletScript =  newBullet.GetComponent<BulletScript>();
         bulletScript.SetBulletSpeed(bulletSpeed);
         bulletScript.SetBulletDamage(bulletDamage);
+        AudioManager.Instance.PlaySound("gunfirePlayer");
     }
 }

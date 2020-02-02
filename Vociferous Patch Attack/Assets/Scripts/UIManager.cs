@@ -26,6 +26,11 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI statusText;
 
+    public TextMeshProUGUI relayDisplayText;
+
+    public GameObject winPanel;
+    public GameObject losePanel;
+
     public Image p1Health;
     public Image p2Health;
 
@@ -154,6 +159,21 @@ public class UIManager : MonoBehaviour
         P2repairPanelRight.SetActive(false);
     }
 
+    public void DisplayWinPanel()
+    {
+        winPanel.SetActive(true);
+    }
+
+    public void DisplayLosePanel()
+    {
+        losePanel.SetActive(true);
+    }
+
+    public void updateRelayDisplayText(int currentRelays, int maxRelays)
+    {
+        relayDisplayText.text = currentRelays.ToString() + "/" + maxRelays.ToString() + " Activated";
+    }
+
     public void ActivateRepairMode()
     {
         statusText.text = "Repairing";
@@ -161,6 +181,8 @@ public class UIManager : MonoBehaviour
         //P1Select(1);
         //P2Select(2);
     }
+
+
 
     public bool isLockedDown()
     {
