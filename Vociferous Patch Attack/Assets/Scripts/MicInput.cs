@@ -28,7 +28,7 @@ public class MicInput : MonoBehaviour
 
     void Awake()
     {
-        if (micInstance = null)
+        if (micInstance == null)
         {
             micInstance = this;
         }
