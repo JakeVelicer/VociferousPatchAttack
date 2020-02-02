@@ -9,7 +9,6 @@ public class TruckMovement : MonoBehaviour
     public Transform truckSpriteObject;
     private Vector2 movement;
     public float health;
-
     private float maxHealth;
 
     // Start is called before the first frame update
@@ -27,6 +26,11 @@ public class TruckMovement : MonoBehaviour
         if(movement.x != 0 || movement.y != 0)
         {
             truckSpriteObject.transform.eulerAngles = new Vector3( 0, 0, Mathf.Atan2(-movement.x, movement.y) * 180 / Mathf.PI);
+        }
+
+        if (Input.GetButtonDown("Dash"))
+        {
+            Debug.Log("Dash");
         }
     }
 
