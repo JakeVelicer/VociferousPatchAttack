@@ -42,9 +42,13 @@ public class TrailerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (canMove)
+        if (canMove && MicInput.micInstance.GetRepairMode())
         {
             rigidBody.velocity = (truck.transform.position - transform.position) * moveSpeed;
+        }
+        else if(!MicInput.micInstance.GetRepairMode())
+        {
+            rigidBody.velocity = Vector3.zero;
         }
     }
 

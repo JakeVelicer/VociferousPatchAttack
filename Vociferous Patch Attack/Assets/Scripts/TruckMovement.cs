@@ -30,7 +30,14 @@ public class TruckMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidBody.MovePosition(rigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (MicInput.micInstance.GetRepairMode())
+        {
+            rigidBody.MovePosition(rigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+        else if(!MicInput.micInstance.GetRepairMode())
+        {
+            rigidBody.velocity = Vector3.zero;
+        }
     }
 
     public void SetHealth(float givenHealth)

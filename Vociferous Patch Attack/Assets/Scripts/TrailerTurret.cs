@@ -21,13 +21,30 @@ public class TrailerTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw("HorizontalTurret") < 0)
+
+        if (MicInput.micInstance.GetRepairMode())
         {
-            transform.Rotate(Vector3.forward * (rotateSpeed * Time.fixedDeltaTime));
+            if(Input.GetAxisRaw("HorizontalTurret") < 0)
+            {
+                transform.Rotate(Vector3.forward * (rotateSpeed * Time.fixedDeltaTime));
+            }
+            else if (Input.GetAxisRaw("HorizontalTurret") > 0)
+            {
+                transform.Rotate(Vector3.forward * (-rotateSpeed * Time.fixedDeltaTime));
+            }
+
+            if (Input.GetButtonDown("FireTurret") && !shooting)
+            {
+                shooting = true;
+            }
+            else if (Input.GetButtonUp("FireTurret"))
+            {
+                shooting = false;
+            }
         }
-        else if (Input.GetAxisRaw("HorizontalTurret") > 0)
+        else
         {
-            transform.Rotate(Vector3.forward * (-rotateSpeed * Time.fixedDeltaTime));
+            shooting = false;
         }
 
         if (shooting)
@@ -39,15 +56,6 @@ public class TrailerTurret : MonoBehaviour
                 Shoot();
                 currentTimer = 0f;
             }
-        }
-
-        if (Input.GetButtonDown("FireTurret") && !shooting)
-        {
-            shooting = true;
-        }
-        else if (Input.GetButtonUp("FireTurret"))
-        {
-            shooting = false;
         }
     }
 
