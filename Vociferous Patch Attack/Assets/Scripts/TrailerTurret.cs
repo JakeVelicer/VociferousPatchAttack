@@ -22,7 +22,7 @@ public class TrailerTurret : MonoBehaviour
     void Update()
     {
 
-        if (MicInput.micInstance.GetRepairMode())
+        if (!MicInput.micInstance.GetRepairMode())
         {
             if(Input.GetAxisRaw("HorizontalTurret") < 0)
             {
