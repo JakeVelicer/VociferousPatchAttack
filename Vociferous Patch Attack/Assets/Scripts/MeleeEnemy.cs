@@ -35,7 +35,7 @@ public class MeleeEnemy : Enemy
         if (currentTimer >= attackRechargeRate)
         {
             Debug.Log("Time to attack");
-            DamagePlayer(damage);
+            DamagePlayer(ClosestPlayer().gameObject);
             currentTimer = 0f;
         }
     }

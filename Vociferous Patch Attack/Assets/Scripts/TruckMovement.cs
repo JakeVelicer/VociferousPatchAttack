@@ -49,4 +49,13 @@ public class TruckMovement : MonoBehaviour
     {
         return health;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("EnemyBullet"))
+        {
+            SetHealth(health - other.gameObject.GetComponent<BulletScript>().GetBulletDamage());
+            Destroy(other.gameObject);
+        }
+    }
 }
