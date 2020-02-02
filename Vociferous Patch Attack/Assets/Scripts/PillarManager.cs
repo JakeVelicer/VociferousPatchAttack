@@ -9,7 +9,7 @@ public class PillarManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,6 +22,11 @@ public class PillarManager : MonoBehaviour
             if(pillarScripts[i].GetComponent<Pillar>().GetActivated())
             {
                 relaysActivated++;
+
+                if (relaysActivated >= pillarScripts.Length)
+                {
+                     UIManager.instance.DisplayWinPanel();
+                }
             }
         }
 
@@ -34,7 +39,6 @@ public class PillarManager : MonoBehaviour
             {
                 break;
             }
-            UIManager.instance.DisplayWinPanel();
         }
 
     }

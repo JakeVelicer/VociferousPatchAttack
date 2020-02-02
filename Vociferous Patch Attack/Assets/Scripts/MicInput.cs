@@ -112,7 +112,7 @@ public class MicInput : MonoBehaviour
             //bar.fillAmount = Mathf.Lerp(bar.fillAmount, (MicLoudness / 1f), 0.125f* Time.deltaTime);
             bar.fillAmount = Mathf.Sqrt(MicLoudness) * 5f;
 
-            Debug.Log(Mathf.Sqrt(MicLoudness) * 100f);
+            //Debug.Log(Mathf.Sqrt(MicLoudness) * 100f);
         }
 
         if (bar.fillAmount >= highSoundThreshold)
