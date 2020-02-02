@@ -120,7 +120,8 @@ public class MicInput : MonoBehaviour
             UIManager.instance.ActivateRepairMode();
             SetRepairMode(true);
         }
-        else if (bar.fillAmount <= lowSoundThreshold)
+
+        if (bar.fillAmount <= lowSoundThreshold)
         {
             UIManager.instance.DeactivateRepairMode();
             SetRepairMode(false);
@@ -128,7 +129,10 @@ public class MicInput : MonoBehaviour
 
         //bar.fillAmount = Mathf.Lerp(0f, 1f, MicLoudness / 1);
 
+        
+        {
 
+        }
         previousLevel = MicLoudness;
     }
 

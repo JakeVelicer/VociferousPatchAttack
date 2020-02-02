@@ -403,10 +403,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3029816091935741821, guid: e735adf8a38934a758057842c84114f7, type: 3}
   bulletSpawnPoint: {fileID: 4312835793839636571}
-  rotateSpeed: 90
+  rotateSpeed: 240
   bulletSpeed: 50
   bulletDamage: 10
-  fireRate: 0.1
+  fireRate: 0.15
 --- !u!1 &3482260147577049992
 GameObject:
   m_ObjectHideFlags: 0

@@ -91,73 +91,57 @@ public class UIManager : MonoBehaviour
 
         if (isLockedDown())
         {
-            if (Input.GetAxisRaw("Horizontal") > 0.0f)
-            {
-                P1Select(2);
-            }
-            else if (Input.GetAxis("Horizontal") < 0.0f)
-            {
-                P1Select(1);
-            }
+            // if (Input.GetAxisRaw("Horizontal") > 0.0f)
+            // {
+            //     P1Select(2);
+            // }
+            // else if (Input.GetAxis("Horizontal") < 0.0f)
+            // {
+            //     P1Select(1);
+            // }
 
-            if (Input.GetAxisRaw("HorizontalTurret") > 0.0f)
-            {
-                P2Select(2);
-            }
-            else if (Input.GetAxis("HorizontalTurret") < 0.0f)
-            {
-                P2Select(1);
-            }
+            // if (Input.GetAxisRaw("HorizontalTurret") > 0.0f)
+            // {
+            //     P2Select(2);
+            // }
+            // else if (Input.GetAxis("HorizontalTurret") < 0.0f)
+            // {
+            //     P2Select(1);
+            // }
 
-            if (Input.GetButtonDown("FireTurret") && P1repairPanelLeft.activeSelf)
-            {
-                p1selectsP1 = true;
-            }
-            else if (Input.GetButtonUp("FireTurret"))
-            {
-                p1selectsP1 = false;
-            }
+            // if (Input.GetButtonDown("FireTurret") && P1repairPanelLeft.activeSelf)
+            // {
+            //     p1selectsP1 = true;
+            // }
 
-            if (Input.GetButtonDown("Dash") && P2repairPanelLeft.activeSelf)
-            {
-                p2selectsP1 = true;
-            }
-            else if (Input.GetButtonUp("Dash"))
-            {
-                p2selectsP1 = false;
-            }
-
-            if (p1selectsP1 && p2selectsP1)
-            {
-                //start repairing player 1
-            }
+            // if (Input.GetButtonDown("Dash") && P2repairPanelLeft.activeSelf)
+            // {
+            //     p2selectsP1 = true;
+            // }
 
 
-            if (Input.GetButtonDown("FireTurret") && P1repairPanelRight.activeSelf)
-            {
-                p1selectsP2 = true;
-            }
-            else if (Input.GetButtonUp("FireTurret"))
-            {
-                p1selectsP2 = false;
-            }
+            // if (Input.GetButtonDown("FireTurret") && P1repairPanelRight.activeSelf)
+            // {
+            //     p1selectsP2 = true;
+            // }
+            // else if (Input.GetButtonUp("FireTurret"))
+            // {
+            //     p1selectsP2 = false;
+            // }
 
-            if (Input.GetButtonDown("Dash") && P2repairPanelRight.activeSelf)
-            {
-                p2selectsP2 = true;
-            }
-            else if (Input.GetButtonUp("Dash"))
-            {
-                p2selectsP2 = false;
-            }
+            // if (Input.GetButtonDown("Dash") && P2repairPanelRight.activeSelf)
+            // {
+            //     p2selectsP2 = true;
+            // }
+            // else if (Input.GetButtonUp("Dash"))
+            // {
+            //     p2selectsP2 = false;
+            // }
 
-            if (p1selectsP2 && p2selectsP2)
-            {
-                //start repairing player 2
-            }
-
-
-            
+            // if (p1selectsP2 && p2selectsP2)
+            // {
+            //     //start repairing player 2
+            // }
         }
     }
 
@@ -172,10 +156,10 @@ public class UIManager : MonoBehaviour
 
     public void ActivateRepairMode()
     {
-        statusText.text = "Lockdown";
+        statusText.text = "Repairing";
 
-        P1Select(1);
-        P2Select(2);
+        //P1Select(1);
+        //P2Select(2);
     }
 
     public bool isLockedDown()
