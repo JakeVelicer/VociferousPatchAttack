@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pillar : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Pillar : MonoBehaviour
     public float maxCharge;
     public float amountCharged;
     private bool charging;
+    public Image chargeBar;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +22,14 @@ public class Pillar : MonoBehaviour
     {
         if(charging)
         {
-            
+            amountCharged += 2 * Time.fixedDeltaTime;
+
+            if (amountCharged >= maxCharge)
+            {
+                activated = true;
+            }
         }
+        chargeBar.fillAmount = (amountCharged / maxCharge);
     }
 
     public bool GetActivated()
@@ -29,11 +37,11 @@ public class Pillar : MonoBehaviour
         return activated;
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("PlayerTruck") || other.gameObject.CompareTag("PlayerTruck"))
         {
-            if(MicInput.micInstance.GetRepairMode())
+            if(MicInput.micInstance.GetRepairMode() == true)
             {
                 charging = true;
             }
