@@ -48,6 +48,7 @@ public class RangedEnemy : Enemy
         BulletScript bulletScript = newBullet.GetComponent<BulletScript>();
 
         bulletScript.SetBulletSpeed(bulletSpeed);
+        bulletScript.SetBulletDamage(damage);
     }
 
     private void OnBecameVisible() 
