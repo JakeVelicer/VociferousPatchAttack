@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour
         {
             BulletScript bulletHit = other.gameObject.GetComponent<BulletScript>();
             TakeDamage((int)(bulletHit.GetBulletDamage()));
+            Destroy(other.gameObject);
         }
     }
 
