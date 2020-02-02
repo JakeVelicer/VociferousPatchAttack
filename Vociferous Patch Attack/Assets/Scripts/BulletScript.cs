@@ -7,6 +7,9 @@ public class BulletScript : MonoBehaviour
 
     private float bulletSpeed = 0;
 
+    private float bulletDamage = 0f;
+
+
     void Start()
     {
         Destroy(gameObject, 5);
@@ -20,5 +23,15 @@ public class BulletScript : MonoBehaviour
     public void SetBulletSpeed(float newSpeed)
     {
         bulletSpeed = newSpeed;
+    }
+
+    public float GetBulletDamage()
+    {
+        return bulletDamage;
+    }
+
+    public void SetBulletDamage(float newDamage)
+    {
+        bulletDamage = newDamage;
     }
 }

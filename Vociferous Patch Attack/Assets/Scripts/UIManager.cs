@@ -69,6 +69,13 @@ public class UIManager : MonoBehaviour
         return (P1repairPanelRight.activeSelf && P2repairPanelRight.activeSelf);
     }
 
+    private bool p1selectsP1;
+    private bool p2selectsP1;
+
+    private bool p1selectsP2;
+
+    private bool p2selectsP2;
+
     private void Update() 
     {
         if (P1Selected())
@@ -79,6 +86,8 @@ public class UIManager : MonoBehaviour
         {
             //repair gun
         }
+
+        
 
         if (isLockedDown())
         {
@@ -99,6 +108,56 @@ public class UIManager : MonoBehaviour
             {
                 P2Select(1);
             }
+
+            if (Input.GetButtonDown("FireTurret") && P1repairPanelLeft.activeSelf)
+            {
+                p1selectsP1 = true;
+            }
+            else if (Input.GetButtonUp("FireTurret"))
+            {
+                p1selectsP1 = false;
+            }
+
+            if (Input.GetButtonDown("Dash") && P2repairPanelLeft.activeSelf)
+            {
+                p2selectsP1 = true;
+            }
+            else if (Input.GetButtonUp("Dash"))
+            {
+                p2selectsP1 = false;
+            }
+
+            if (p1selectsP1 && p2selectsP1)
+            {
+                //start repairing player 1
+            }
+
+
+            if (Input.GetButtonDown("FireTurret") && P1repairPanelRight.activeSelf)
+            {
+                p1selectsP2 = true;
+            }
+            else if (Input.GetButtonUp("FireTurret"))
+            {
+                p1selectsP2 = false;
+            }
+
+            if (Input.GetButtonDown("Dash") && P2repairPanelRight.activeSelf)
+            {
+                p2selectsP2 = true;
+            }
+            else if (Input.GetButtonUp("Dash"))
+            {
+                p2selectsP2 = false;
+            }
+
+            if (p1selectsP2 && p2selectsP2)
+            {
+                //start repairing player 2
+            }
+
+
+            
         }
     }
 
