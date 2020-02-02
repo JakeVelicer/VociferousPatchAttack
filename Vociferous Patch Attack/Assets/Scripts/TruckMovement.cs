@@ -8,6 +8,7 @@ public class TruckMovement : MonoBehaviour
     public Rigidbody2D rigidBody;
     public Transform truckSpriteObject;
     private Vector2 movement;
+    private float health;
 
     // Start is called before the first frame update
     void Start()
@@ -30,5 +31,15 @@ public class TruckMovement : MonoBehaviour
     void FixedUpdate()
     {
         rigidBody.MovePosition(rigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public void SetHealth(float givenHealth)
+    {
+        health = givenHealth;
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }
