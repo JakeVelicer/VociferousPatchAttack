@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1156977895585433020}
   - component: {fileID: 1156977895585433023}
   - component: {fileID: 1156977895585433022}
+  - component: {fileID: 7133816471616618408}
   m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -99,3 +100,19 @@ MonoBehaviour:
   speed: 2.5
   distanceToAttack: 1.2
   attackRechargeRate: 0.5
+--- !u!58 &7133816471616618408
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156977895585433017}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
