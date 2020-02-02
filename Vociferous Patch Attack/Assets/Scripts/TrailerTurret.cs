@@ -8,6 +8,7 @@ public class TrailerTurret : MonoBehaviour
     public Transform bulletSpawnPoint;
     public float rotateSpeed;
     public float bulletSpeed;
+    public float bulletDamage;
     public float fireRate;
     private bool shooting;
     private float currentTimer;
@@ -62,6 +63,8 @@ public class TrailerTurret : MonoBehaviour
     private void Shoot()
     {
         GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        newBullet.GetComponent<BulletScript>().SetBulletSpeed(bulletSpeed);
+        BulletScript bulletScript =  newBullet.GetComponent<BulletScript>();
+        bulletScript.SetBulletSpeed(bulletSpeed);
+        bulletScript.SetBulletDamage(bulletDamage);
     }
 }
