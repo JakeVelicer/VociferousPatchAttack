@@ -178,7 +178,7 @@ MonoBehaviour:
   health: 10
   damage: 2
   speed: 2
-  fireRate: 5
+  fireRate: 0.3
   bulletSpeed: 10
   bullet: {fileID: 3029816091935741821, guid: e0b674972178f41a7a50ddc7d0bf63cd, type: 3}
   firePoint: {fileID: 989549167627538510}

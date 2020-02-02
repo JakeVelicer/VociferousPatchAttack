@@ -44,7 +44,7 @@ public class SpawnManager : MonoBehaviour
 
     private float randomSpawnPosX()
     {
-        float randomNum = Random.Range(-14f, -19f);
+        float randomNum = Random.Range(-14f, -30f);
 
         if (Random.Range(0,2) == 1)
         {
@@ -56,7 +56,7 @@ public class SpawnManager : MonoBehaviour
 
     private float randomSpawnPosY()
     {
-        float randomNum = Random.Range(10f, 15f);
+        float randomNum = Random.Range(10f, 30f);
 
         if (Random.Range(0,2) == 1)
         {
