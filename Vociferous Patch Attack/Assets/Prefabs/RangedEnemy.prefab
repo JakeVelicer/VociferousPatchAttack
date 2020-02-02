@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 989549168973305123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 5459331432320275320}
   - {fileID: 496249797466268025}
@@ -127,10 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1038b1c7fce58429ba65bf3cdc08ded1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 40
   damage: 2
   speed: 2
-  fireRate: 5
+  fireRate: 0.6
   bulletSpeed: 10
   bullet: {fileID: 3029816091935741821, guid: e0b674972178f41a7a50ddc7d0bf63cd, type: 3}
   firePoint: {fileID: 989549167627538510}
