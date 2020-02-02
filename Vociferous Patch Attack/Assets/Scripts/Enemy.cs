@@ -51,9 +51,16 @@ public class Enemy : MonoBehaviour
         Move();
     }
 
-    public void DamagePlayer(int damageToDeal)
+    public void DamagePlayer(GameObject playerToAttack)
     {
-        Debug.Log("Player is being damaged");
+        if (playerToAttack.name == "Truck")
+        {
+            playerToAttack.GetComponent<TruckMovement>().SetHealth(playerToAttack.GetComponent<TruckMovement>().GetHealth() - damage);
+        }
+        else if (playerToAttack.name == "Trailer")
+        {
+            playerToAttack.GetComponent<TrailerMovement>().SetHealth(playerToAttack.GetComponent<TrailerMovement>().GetHealth() - damage);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) 
