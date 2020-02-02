@@ -8,6 +8,7 @@ public class TrailerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rigidBody;
     public float maxDistance = 3;
+    private float health;
     private float distance;
     private bool canMove;
 
@@ -45,5 +46,15 @@ public class TrailerMovement : MonoBehaviour
         {
             rigidBody.velocity = (truck.transform.position - transform.position) * moveSpeed;
         }
+    }
+
+    public void SetHealth(float givenHealth)
+    {
+        health = givenHealth;
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }
