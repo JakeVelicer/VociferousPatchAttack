@@ -79,6 +79,27 @@ public class UIManager : MonoBehaviour
         {
             //repair gun
         }
+
+        if (isLockedDown())
+        {
+            if (Input.GetAxisRaw("Horizontal") > 0.0f)
+            {
+                P1Select(2);
+            }
+            else if (Input.GetAxis("Horizontal") < 0.0f)
+            {
+                P1Select(1);
+            }
+
+            if (Input.GetAxisRaw("HorizontalTurret") > 0.0f)
+            {
+                P2Select(2);
+            }
+            else if (Input.GetAxis("HorizontalTurret") < 0.0f)
+            {
+                P2Select(1);
+            }
+        }
     }
 
     public void DeactivateAllPanels()
@@ -86,8 +107,8 @@ public class UIManager : MonoBehaviour
         P1repairPanelLeft.SetActive(false);
         P1repairPanelRight.SetActive(false);
 
-        P1repairPanelLeft.SetActive(false);
-        P1repairPanelRight.SetActive(false);
+        P2repairPanelLeft.SetActive(false);
+        P2repairPanelRight.SetActive(false);
     }
 
     public void ActivateRepairMode()
@@ -96,6 +117,11 @@ public class UIManager : MonoBehaviour
 
         P1Select(1);
         P2Select(2);
+    }
+
+    public bool isLockedDown()
+    {
+        return (P1repairPanelLeft.activeSelf || P1repairPanelRight.activeSelf || P2repairPanelLeft.activeSelf || P2repairPanelRight.activeSelf);
     }
 
     public void DeactivateRepairMode()
