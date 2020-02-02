@@ -21,13 +21,17 @@ public class TrailerTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw("HorizontalTurret") < 0)
+
+        if (MicInput.micInstance.GetRepairMode())
         {
-            transform.Rotate(Vector3.forward * (rotateSpeed * Time.fixedDeltaTime));
-        }
-        else if (Input.GetAxisRaw("HorizontalTurret") > 0)
-        {
-            transform.Rotate(Vector3.forward * (-rotateSpeed * Time.fixedDeltaTime));
+            if(Input.GetAxisRaw("HorizontalTurret") < 0)
+            {
+                transform.Rotate(Vector3.forward * (rotateSpeed * Time.fixedDeltaTime));
+            }
+            else if (Input.GetAxisRaw("HorizontalTurret") > 0)
+            {
+                transform.Rotate(Vector3.forward * (-rotateSpeed * Time.fixedDeltaTime));
+            }
         }
 
         if (shooting)
