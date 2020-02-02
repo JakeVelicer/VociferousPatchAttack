@@ -4,7 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class MicInput : MonoBehaviour{
+public class MicInput : MonoBehaviour
+{
+
+
+    [Range(0.0f, 1.0f)]
+    public float soundThreshold;
 
     public float testSound;
     public static float MicLoudness;
@@ -13,7 +18,7 @@ public class MicInput : MonoBehaviour{
     private int _sampleWindow = 128;
     private bool _isInitialized;
 
-    public TextMeshProUGUI displayText;
+    //public TextMeshProUGUI displayText;
 
     public Image bar;
 
@@ -67,7 +72,8 @@ public class MicInput : MonoBehaviour{
          while(true)
          {
              yield return new WaitForSeconds(0.02f);
-             bar.fillAmount = Mathf.Lerp(bar.fillAmount, (MicLoudness / 1f), 1);
+             //bar.fillAmount = Mathf.Lerp(bar.fillAmount, (MicLoudness / 1f), 1);
+             //UIManager.instance.UpdateSoundBar(Mathf.Lerp(bar.fillAmount))
          }
     }
 
@@ -81,7 +87,7 @@ public class MicInput : MonoBehaviour{
         float db = 20f * Mathf.Log10(Mathf.Abs(MicInput.MicLoudness));
 
 
-        displayText.text = db.ToString();
+        //displayText.text = db.ToString();
         
 
 
@@ -91,8 +97,23 @@ public class MicInput : MonoBehaviour{
         }
         else
         {
-            bar.fillAmount = Mathf.Lerp(bar.fillAmount, (MicLoudness / 1f), 0.125f* Time.deltaTime);
+            //bar.fillAmount = Mathf.Lerp(bar.fillAmount, (MicLoudness / 1f), 0.125f* Time.deltaTime);
+            bar.fillAmount = Mathf.Sqrt(MicLoudness) * 5f;
+
+            Debug.Log(Mathf.Sqrt(MicLoudness) * 100f);
         }
+
+        if (bar.fillAmount >= soundThreshold)
+        {
+            UIManager.instance.ActivateRepairMode();
+        }
+        else
+        {
+            UIManager.instance.DeactivateRepairMode();
+        }
+
+        //bar.fillAmount = Mathf.Lerp(0f, 1f, MicLoudness / 1);
+
 
         previousLevel = MicLoudness;
     }
