@@ -56,6 +56,15 @@ public class Enemy : MonoBehaviour
         Debug.Log("Player is being damaged");
     }
 
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if (other.gameObject.tag == "PlayerBullet")
+        {
+            BulletScript bulletHit = other.gameObject.GetComponent<BulletScript>();
+            TakeDamage((int)(bulletHit.GetBulletDamage()));
+        }
+    }
+
     public void Die()
     {
 
