@@ -71,7 +71,10 @@ public class TruckMovement : MonoBehaviour
         if (currentTimer >= healRate)
         {
             currentTimer = 0f;
-            SetHealth(GetHealth() + healAmount);
+            if (GetHealth() < maxHealth)
+            {
+                SetHealth(GetHealth() + healAmount);
+            }
         }
     }
 

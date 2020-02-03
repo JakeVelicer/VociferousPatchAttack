@@ -507,7 +507,7 @@ MonoBehaviour:
   maxDistance: 3
   health: 200
   healRate: 0.2
-  healAmount: 4
+  healAmount: 3
 --- !u!1 &3482260148359770367
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +720,7 @@ MonoBehaviour:
   truckSpriteObject: {fileID: 3482260148634190352}
   health: 100
   healRate: 0.2
-  healAmount: 4
+  healAmount: 3
 --- !u!1 &5549540483093034683
 GameObject:
   m_ObjectHideFlags: 0
